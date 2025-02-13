@@ -59,6 +59,38 @@ struct SettingsView: View {
             
             
             // About Section
+            Section(
+                header:
+                    Text("About THE APP"),
+                footer:
+                    HStack {
+                        Spacer()
+                        Text("Copyright © All right reserved.")
+                        Spacer()
+                    }
+                    .padding(.vertical, 8)
+            ) {
+                // 1. Basic Labeled Content
+//                LabeledContent("Application", value: "Hike")
+                
+                
+                
+                // 2. Advanced Labeled Content
+
+                CustomListRowView(rowLabel: "Application", rowIcon: "apps.iphone", rowContent: "Hike", rowTintColor: .blue)
+                
+                CustomListRowView(rowLabel: "Compatibility", rowIcon: "info.circle", rowContent: "iOS, iPadOS", rowTintColor: .red)
+                
+                CustomListRowView(rowLabel: "Technology", rowIcon: "swift", rowContent: "Swift", rowTintColor: .orange)
+                
+                CustomListRowView(rowLabel: "Version", rowIcon: "gear", rowContent: "1.0", rowTintColor: .purple)
+                
+                CustomListRowView(rowLabel: "Developed By", rowIcon: "ellipsis.curlybraces", rowContent: "Jibryll Brinkley", rowTintColor: .mint)
+                
+
+                CustomListRowView(rowLabel: "Website", rowIcon: "globe", rowTintColor: .indigo, rowLinkLabel: "Visit My GitHub", rowLinkDestination: "https://github.com/BryllieBrinkley")
+                
+            } // About Section END
             
             
             

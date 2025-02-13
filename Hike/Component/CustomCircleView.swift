@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomCircleView: View {
     @State private var isAnimateGradient: Bool = false
-
+    
     var body: some View {
         ZStack {
             Circle()

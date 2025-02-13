@@ -20,7 +20,7 @@ struct CustomButtonView: View {
                         startPoint: .top,
                         endPoint: .bottom)
                 )
-                Circle()
+            Circle()
                 .stroke(LinearGradient(
                     colors: [
                         .customGrayLight,
@@ -28,7 +28,7 @@ struct CustomButtonView: View {
                     ],
                     startPoint: .top,
                     endPoint: .bottom),
-                    lineWidth: 4)
+                        lineWidth: 4)
             
             Image(systemName: "figure.hiking")
                 .fontWeight(.black)

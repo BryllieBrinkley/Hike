@@ -70,12 +70,13 @@ struct CardView: View {
                 
                 // Main Content
                 ZStack {
+                
                     CustomCircleView()
                     
                     Image("image-\(imageNumber)")
                         .resizable()
                         .scaledToFit()
-                        .animation(.default, value: imageNumber)
+                        .animation(.easeInOut(duration: 0.3), value: imageNumber)
                 }
                 
                 // Footer
@@ -88,8 +89,8 @@ struct CardView: View {
                         .foregroundStyle(LinearGradient(colors: [
                             .customGreenLight,
                             .customGreenMedium],
-                            startPoint: .top,
-                            endPoint: .bottom))
+                                                        startPoint: .top,
+                                                        endPoint: .bottom))
                         .shadow(color: .black.opacity(0.25), radius: 0.25, x: 1, y: 2)
                 }
                 .buttonStyle(GradientButton())

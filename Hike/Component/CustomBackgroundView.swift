@@ -16,7 +16,7 @@ struct CustomBackgroundView: View {
             Color.customGreenDark
                 .cornerRadius(40)
                 .offset(y: 12)
-
+            
             // 2. Light
             Color.customGreenLight
                 .cornerRadius(40)

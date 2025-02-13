@@ -73,7 +73,7 @@ struct MotionAnimationView: View {
 }
 
 #Preview {
-        MotionAnimationView()
+    MotionAnimationView()
         .background(
             Circle()
                 .fill(.teal)

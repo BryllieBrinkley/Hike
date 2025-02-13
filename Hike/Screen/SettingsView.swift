@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct SettingsView: View {
+    //Properties
+    private let alternateAppicons: [String] = [
+        "AppIcon-MagnifyingGlass",
+        "AppIcon-Map",
+        "AppIcon-Mushroom",
+        "AppIcon-Camera",
+        "AppIcon-Backpack",
+        "AppIcon-Campfire"
+    ]
+    
     var body: some View {
         List {
             
@@ -56,6 +66,44 @@ struct SettingsView: View {
             
             
             // Icons
+            
+            Section(header: Text("Alternate Icons")) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        ForEach(alternateAppicons.indices, id: \.self) { item in
+                            Button {
+                                print("\(alternateAppicons[item]) was pressed")
+                                UIApplication.shared.setAlternateIconName(alternateAppicons[item]) { error in
+                                    if error != nil {
+                                        print("Failed request to update the apps icon: \(String(describing: error?.localizedDescription))")
+                                    } else {
+                                        print("Success, app icon changed to: \(alternateAppicons[item])")
+                                    }
+                                }
+                            } label: {
+                                Image("\(alternateAppicons[item])-Preview")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 80, height: 80)
+                                    .cornerRadius(16)
+                                
+                            }
+                            .buttonStyle(.borderless)
+                        }
+                    }
+                    
+                }//End of Scroll View
+                .padding(.top, 12)
+                
+                Text("Choose your favorite app icon from the selection above.")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.secondary)
+                    .font(.footnote)
+                    .padding(.bottom, 12)
+            } // End of Icons Section
+            .listRowSeparator(.hidden)
+            
             
             
             // About Section
